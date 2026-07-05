@@ -1,0 +1,831 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TimeCapsule — Mobile App UI/UX Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<!-- Ambient Background -->
+<div class="ambient-bg">
+  <div class="blob"></div>
+  <div class="blob"></div>
+  <div class="blob"></div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+  <i class="fa-solid fa-check-circle"></i>
+  <span id="toastMsg">Capsule sealed successfully</span>
+</div>
+
+<div class="presentation">
+
+  <!-- Header -->
+  <header class="presentation-header">
+    <div class="tag"><i class="fa-solid fa-gem"></i> Mobile UI/UX Concept</div>
+    <h1>TimeCapsule</h1>
+    <p>A premium mobile experience for preserving meaningful memories, sending future messages, and sealing digital time capsules that unlock when the moment arrives.</p>
+  </header>
+
+  <!-- Screen Thumbnails Grid -->
+  <section class="screens-grid" id="screensGrid">
+    <div class="screen-card active" data-screen="home" onclick="switchScreen('home')">
+      <div class="phone-frame">
+        <div style="padding:40px 14px 14px;display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <div>
+              <div style="width:60px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;margin-bottom:6px;"></div>
+              <div style="width:90px;height:12px;background:rgba(255,255,255,0.15);border-radius:4px;"></div>
+            </div>
+            <div style="width:28px;height:28px;border-radius:50%;background:rgba(254,228,105,0.2);"></div>
+          </div>
+          <div style="display:flex;gap:6px;margin-bottom:8px;">
+            <div style="flex:1;height:52px;background:rgba(0,0,205,0.1);border:1px solid rgba(0,0,205,0.2);border-radius:10px;"></div>
+            <div style="flex:1;height:52px;background:rgba(254,228,105,0.1);border:1px solid rgba(254,228,105,0.2);border-radius:10px;"></div>
+            <div style="flex:1;height:52px;background:rgba(139,35,35,0.1);border:1px solid rgba(139,35,35,0.2);border-radius:10px;"></div>
+          </div>
+          <div style="width:100px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;margin-bottom:8px;"></div>
+          <div style="display:flex;gap:8px;">
+            <div style="width:140px;height:110px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;flex-shrink:0;"></div>
+            <div style="width:140px;height:110px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;flex-shrink:0;"></div>
+          </div>
+          <div style="width:120px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;margin-top:8px;margin-bottom:8px;"></div>
+          <div style="height:50px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:10px;"></div>
+          <div style="height:50px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:10px;"></div>
+        </div>
+      </div>
+      <div class="label"><h3>Home</h3><span>Dashboard</span></div>
+    </div>
+
+    <div class="screen-card" data-screen="create" onclick="switchScreen('create')">
+      <div class="phone-frame">
+        <div style="padding:40px 14px 14px;display:flex;flex-direction:column;gap:10px;">
+          <div style="text-align:center;margin-bottom:4px;">
+            <div style="width:80px;height:10px;background:rgba(255,255,255,0.15);border-radius:4px;margin:0 auto 6px;"></div>
+            <div style="width:120px;height:6px;background:rgba(255,255,255,0.08);border-radius:4px;margin:0 auto;"></div>
+          </div>
+          <div style="width:100%;height:36px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;"></div>
+          <div style="width:100%;height:70px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;"></div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+            <div style="aspect-ratio:1;background:rgba(255,255,255,0.05);border:1px dashed rgba(255,255,255,0.1);border-radius:10px;"></div>
+            <div style="aspect-ratio:1;background:rgba(255,255,255,0.05);border:1px dashed rgba(255,255,255,0.1);border-radius:10px;"></div>
+            <div style="aspect-ratio:1;background:rgba(255,255,255,0.05);border:1px dashed rgba(255,255,255,0.1);border-radius:10px;"></div>
+            <div style="aspect-ratio:1;background:rgba(255,255,255,0.05);border:1px dashed rgba(255,255,255,0.1);border-radius:10px;"></div>
+          </div>
+          <div style="display:flex;gap:6px;">
+            <div style="flex:1;height:36px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;"></div>
+            <div style="flex:1;height:36px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;"></div>
+          </div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;">
+            <div style="width:70px;height:28px;background:rgba(0,0,205,0.15);border:1px solid rgba(0,0,205,0.3);border-radius:100px;"></div>
+            <div style="width:50px;height:28px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:100px;"></div>
+            <div style="width:60px;height:28px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:100px;"></div>
+          </div>
+          <div style="width:100%;height:44px;background:rgba(0,0,205,0.4);border-radius:12px;margin-top:4px;"></div>
+        </div>
+      </div>
+      <div class="label"><h3>Create</h3><span>New Capsule</span></div>
+    </div>
+
+    <div class="screen-card" data-screen="timeline" onclick="switchScreen('timeline')">
+      <div class="phone-frame">
+        <div style="padding:40px 14px 14px;display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+            <div style="width:80px;height:12px;background:rgba(255,255,255,0.15);border-radius:4px;"></div>
+            <div style="width:28px;height:28px;border-radius:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);"></div>
+          </div>
+          <div style="display:flex;gap:6px;margin-bottom:8px;">
+            <div style="width:50px;height:24px;background:rgba(0,0,205,0.5);border-radius:100px;"></div>
+            <div style="width:60px;height:24px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:100px;"></div>
+            <div style="width:70px;height:24px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:100px;"></div>
+          </div>
+          <div style="position:relative;padding-left:16px;">
+            <div style="position:absolute;left:4px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,#0000CD,#8B2323,#FEE469);border-radius:2px;"></div>
+            <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:12px;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#0000CD;flex-shrink:0;margin-left:-12px;margin-top:4px;border:2px solid #0A0A12;"></div>
+              <div style="width:100%;height:80px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:10px;"></div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:12px;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#8B2323;flex-shrink:0;margin-left:-12px;margin-top:4px;border:2px solid #0A0A12;"></div>
+              <div style="width:100%;height:60px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:10px;"></div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:flex-start;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#FEE469;flex-shrink:0;margin-left:-12px;margin-top:4px;border:2px solid #0A0A12;"></div>
+              <div style="width:100%;height:70px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:10px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="label"><h3>Timeline</h3><span>Chronological</span></div>
+    </div>
+
+    <div class="screen-card" data-screen="detail" onclick="switchScreen('detail')">
+      <div class="phone-frame">
+        <div style="display:flex;flex-direction:column;height:100%;">
+          <div style="flex-shrink:0;padding:40px 14px 8px;">
+            <div style="width:60px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;"></div>
+          </div>
+          <div style="flex:1;background:rgba(255,255,255,0.03);margin:0 14px;border-radius:12px;overflow:hidden;">
+            <div style="height:55%;background:rgba(0,0,205,0.08);"></div>
+            <div style="padding:10px;">
+              <div style="width:60px;height:16px;background:rgba(139,35,35,0.2);border-radius:100px;margin-bottom:8px;"></div>
+              <div style="width:80%;height:10px;background:rgba(255,255,255,0.1);border-radius:4px;margin-bottom:6px;"></div>
+              <div style="width:50%;height:8px;background:rgba(255,255,255,0.06);border-radius:4px;margin-bottom:12px;"></div>
+              <div style="width:100%;height:8px;background:rgba(255,255,255,0.06);border-radius:4px;margin-bottom:4px;"></div>
+              <div style="width:90%;height:8px;background:rgba(255,255,255,0.06);border-radius:4px;margin-bottom:12px;"></div>
+              <div style="display:flex;justify-content:center;gap:10px;margin-bottom:12px;">
+                <div style="text-align:center;"><div style="width:28px;height:24px;background:rgba(254,228,105,0.2);border-radius:6px;margin-bottom:2px;"></div><div style="width:16px;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;margin:0 auto;"></div></div>
+                <div style="text-align:center;"><div style="width:28px;height:24px;background:rgba(254,228,105,0.2);border-radius:6px;margin-bottom:2px;"></div><div style="width:16px;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;margin:0 auto;"></div></div>
+                <div style="text-align:center;"><div style="width:28px;height:24px;background:rgba(254,228,105,0.2);border-radius:6px;margin-bottom:2px;"></div><div style="width:16px;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;margin:0 auto;"></div></div>
+                <div style="text-align:center;"><div style="width:28px;height:24px;background:rgba(254,228,105,0.2);border-radius:6px;margin-bottom:2px;"></div><div style="width:16px;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;margin:0 auto;"></div></div>
+              </div>
+              <div style="display:flex;gap:6px;">
+                <div style="flex:1;height:32px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;"></div>
+                <div style="flex:1;height:32px;background:rgba(0,0,205,0.4);border-radius:10px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="label"><h3>Detail</h3><span>Capsule View</span></div>
+    </div>
+  </section>
+
+  <!-- Interactive Phone -->
+  <section class="interactive-section">
+    <h2>Interactive Prototype</h2>
+
+    <div class="phone-container">
+      <div class="phone-screen" id="phoneScreen">
+
+        <!-- HOME SCREEN -->
+        <div class="app-screen active" id="screen-home">
+          <div class="status-bar">
+            <span class="time">9:41</span>
+            <span class="icons"><i class="fa-solid fa-signal"></i> <i class="fa-solid fa-wifi"></i> <i class="fa-solid fa-battery-full"></i></span>
+          </div>
+
+          <div class="home-header">
+            <div class="greeting">
+              Good evening,
+              <strong>Sarah</strong>
+            </div>
+            <div class="avatar">S</div>
+          </div>
+
+          <div class="home-stats">
+            <div class="stat-card">
+              <div class="number blue">12</div>
+              <div class="label">Sealed</div>
+            </div>
+            <div class="stat-card">
+              <div class="number gold">5</div>
+              <div class="label">Unlocked</div>
+            </div>
+            <div class="stat-card">
+              <div class="number crimson">3</div>
+              <div class="label">Opening Soon</div>
+            </div>
+          </div>
+
+          <div class="section-title">
+            <h2>Sealed Capsules</h2>
+            <a href="#" onclick="switchScreen('timeline');return false;">See All</a>
+          </div>
+
+          <div class="capsule-scroll">
+            <div class="capsule-card" onclick="switchScreen('detail')">
+              <img class="thumb" src="https://picsum.photos/seed/capsule1/440/280.jpg" alt="Capsule">
+              <div class="info">
+                <h3>Graduation Day Memories</h3>
+                <div class="meta">
+                  <span class="countdown-badge locked"><i class="fa-solid fa-lock" style="font-size:9px;"></i> 142 days</span>
+                  <span class="dot"></span>
+                  <span>Jun 2026</span>
+                </div>
+              </div>
+            </div>
+            <div class="capsule-card" onclick="switchScreen('detail')">
+              <img class="thumb" src="https://picsum.photos/seed/capsule2/440/280.jpg" alt="Capsule">
+              <div class="info">
+                <h3>Letter to Future Me</h3>
+                <div class="meta">
+                  <span class="countdown-badge locked"><i class="fa-solid fa-lock" style="font-size:9px;"></i> 89 days</span>
+                  <span class="dot"></span>
+                  <span>Mar 2026</span>
+                </div>
+              </div>
+            </div>
+            <div class="capsule-card" onclick="switchScreen('detail')">
+              <img class="thumb" src="https://picsum.photos/seed/capsule3/440/280.jpg" alt="Capsule">
+              <div class="info">
+                <h3>Our First Apartment</h3>
+                <div class="meta">
+                  <span class="countdown-badge locked"><i class="fa-solid fa-lock" style="font-size:9px;"></i> 367 days</span>
+                  <span class="dot"></span>
+                  <span>Dec 2026</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-title">
+            <h2>Recently Unlocked</h2>
+            <a href="#">View All</a>
+          </div>
+
+          <div class="unlocked-list">
+            <div class="unlocked-item" onclick="switchScreen('detail')">
+              <div class="icon-wrap blue"><i class="fa-solid fa-envelope-open-text"></i></div>
+              <div class="details">
+                <h4>Happy 25th Birthday!</h4>
+                <p>From Mom &middot; Unlocked 2 days ago</p>
+              </div>
+              <i class="fa-solid fa-chevron-right arrow"></i>
+            </div>
+            <div class="unlocked-item" onclick="switchScreen('detail')">
+              <div class="icon-wrap gold"><i class="fa-solid fa-image"></i></div>
+              <div class="details">
+                <h4>Summer 2024 Collection</h4>
+                <p>From Jake &middot; Unlocked 1 week ago</p>
+              </div>
+              <i class="fa-solid fa-chevron-right arrow"></i>
+            </div>
+            <div class="unlocked-item" onclick="switchScreen('detail')">
+              <div class="icon-wrap crimson"><i class="fa-solid fa-heart"></i></div>
+              <div class="details">
+                <h4>Our Anniversary Promise</h4>
+                <p>From Alex &middot; Unlocked 2 weeks ago</p>
+              </div>
+              <i class="fa-solid fa-chevron-right arrow"></i>
+            </div>
+          </div>
+
+          <div style="height:20px;"></div>
+
+          <nav class="tab-bar">
+            <button class="tab-item active" onclick="switchScreen('home')"><i class="fa-solid fa-house"></i><span>Home</span></button>
+            <button class="tab-item" onclick="switchScreen('timeline')"><i class="fa-solid fa-clock-rotate-left"></i><span>Timeline</span></button>
+            <button class="tab-item create-btn" onclick="switchScreen('create')"><i class="fa-solid fa-plus"></i></button>
+            <button class="tab-item" onclick="switchScreen('notifications')"><i class="fa-solid fa-bell"></i><span>Alerts</span></button>
+            <button class="tab-item" onclick="switchScreen('profile')"><i class="fa-solid fa-user"></i><span>Profile</span></button>
+          </nav>
+        </div>
+
+        <!-- CREATE SCREEN -->
+        <div class="app-screen" id="screen-create">
+          <div class="status-bar">
+            <span class="time">9:41</span>
+            <span class="icons"><i class="fa-solid fa-signal"></i> <i class="fa-solid fa-wifi"></i> <i class="fa-solid fa-battery-full"></i></span>
+          </div>
+
+          <div class="create-header">
+            <h1>Seal a Capsule</h1>
+            <p>Preserve this moment for the future</p>
+          </div>
+
+          <div class="create-form">
+            <div class="form-group">
+              <label>Capsule Title</label>
+              <input type="text" class="form-input" placeholder="What's inside this capsule?" id="capsuleTitle">
+            </div>
+
+            <div class="form-group">
+              <label>Your Message</label>
+              <textarea class="form-input" placeholder="Write a letter to the future..." id="capsuleMessage"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Attachments</label>
+              <div class="media-upload" id="mediaUpload">
+                <div class="media-slot" onclick="addMedia(0)"><i class="fa-solid fa-plus"></i></div>
+                <div class="media-slot" onclick="addMedia(1)"><i class="fa-solid fa-plus"></i></div>
+                <div class="media-slot" onclick="addMedia(2)"><i class="fa-solid fa-plus"></i></div>
+                <div class="media-slot" onclick="addMedia(3)"><i class="fa-solid fa-plus"></i></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Unlock Date</label>
+              <div class="date-picker-row">
+                <input type="date" class="form-input" id="unlockDate">
+                <input type="time" class="form-input" id="unlockTime" value="09:00">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Recipients</label>
+              <div class="recipient-chips" id="recipientChips">
+                <div class="chip" onclick="toggleChip(this)"><img src="https://picsum.photos/seed/user1/44/44.jpg" alt=""> Jake</div>
+                <div class="chip" onclick="toggleChip(this)"><img src="https://picsum.photos/seed/user2/44/44.jpg" alt=""> Mom</div>
+                <div class="chip" onclick="toggleChip(this)"><img src="https://picsum.photos/seed/user3/44/44.jpg" alt=""> Alex</div>
+                <div class="chip" onclick="toggleChip(this)"><img src="https://picsum.photos/seed/user4/44/44.jpg" alt=""> Taylor</div>
+                <div class="chip" onclick="toggleChip(this)"><i class="fa-solid fa-user-plus" style="font-size:11px;"></i> Add</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Privacy</label>
+              <div class="recipient-chips">
+                <div class="chip selected" onclick="selectPrivacy(this, this.parentElement)">Only Recipients</div>
+                <div class="chip" onclick="selectPrivacy(this, this.parentElement)">Friends</div>
+                <div class="chip" onclick="selectPrivacy(this, this.parentElement)">Public</div>
+              </div>
+            </div>
+
+            <button class="btn-primary" onclick="sealCapsule()">
+              <i class="fa-solid fa-lock"></i>&nbsp; Seal This Capsule
+            </button>
+          </div>
+
+          <div style="height:20px;"></div>
+
+          <nav class="tab-bar">
+            <button class="tab-item" onclick="switchScreen('home')"><i class="fa-solid fa-house"></i><span>Home</span></button>
+            <button class="tab-item" onclick="switchScreen('timeline')"><i class="fa-solid fa-clock-rotate-left"></i><span>Timeline</span></button>
+            <button class="tab-item create-btn" onclick="switchScreen('create')"><i class="fa-solid fa-plus"></i></button>
+            <button class="tab-item" onclick="switchScreen('notifications')"><i class="fa-solid fa-bell"></i><span>Alerts</span></button>
+            <button class="tab-item" onclick="switchScreen('profile')"><i class="fa-solid fa-user"></i><span>Profile</span></button>
+          </nav>
+        </div>
+
+        <!-- TIMELINE SCREEN -->
+        <div class="app-screen" id="screen-timeline">
+          <div class="status-bar">
+            <span class="time">9:41</span>
+            <span class="icons"><i class="fa-solid fa-signal"></i> <i class="fa-solid fa-wifi"></i> <i class="fa-solid fa-battery-full"></i></span>
+          </div>
+
+          <div class="timeline-header">
+            <h1>Timeline</h1>
+            <button style="background:var(--bg-card);border:1px solid var(--border);color:var(--text-secondary);width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+              <i class="fa-solid fa-sliders"></i>
+            </button>
+          </div>
+
+          <div class="filter-pills">
+            <button class="pill active" onclick="selectPill(this)">All</button>
+            <button class="pill" onclick="selectPill(this)">Sealed</button>
+            <button class="pill" onclick="selectPill(this)">Unlocked</button>
+            <button class="pill" onclick="selectPill(this)">Opening Soon</button>
+            <button class="pill" onclick="selectPill(this)">Sent to Me</button>
+          </div>
+
+          <div class="timeline-list">
+            <div class="timeline-date-label">December 2025</div>
+
+            <div class="timeline-item" onclick="switchScreen('detail')">
+              <div class="timeline-dot crimson"></div>
+              <div class="timeline-content">
+                <img src="https://picsum.photos/seed/tl1/600/240.jpg" alt="">
+                <div class="tc-info">
+                  <h3>New Year's Resolution</h3>
+                  <p><span class="countdown-badge locked" style="font-size:10px;padding:2px 8px;"><i class="fa-solid fa-lock" style="font-size:8px;"></i> 3 days</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item" onclick="switchScreen('detail')">
+              <div class="timeline-dot blue"></div>
+              <div class="timeline-content">
+                <img src="https://picsum.photos/seed/tl2/600/240.jpg" alt="">
+                <div class="tc-info">
+                  <h3>Holiday Family Photos</h3>
+                  <p><span class="countdown-badge locked" style="font-size:10px;padding:2px 8px;"><i class="fa-solid fa-lock" style="font-size:8px;"></i> 45 days</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-date-label">November 2025</div>
+
+            <div class="timeline-item" onclick="switchScreen('detail')">
+              <div class="timeline-dot gold"></div>
+              <div class="timeline-content">
+                <div class="tc-info" style="padding:16px;">
+                  <h3>Gratitude Journal Entry</h3>
+                  <p><span class="countdown-badge opened" style="font-size:10px;padding:2px 8px;"><i class="fa-solid fa-lock-open" style="font-size:8px;"></i> Unlocked</span> &middot; Nov 28</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item" onclick="switchScreen('detail')">
+              <div class="timeline-dot gold"></div>
+              <div class="timeline-content">
+                <img src="https://picsum.photos/seed/tl3/600/240.jpg" alt="">
+                <div class="tc-info">
+                  <h3>Thanksgiving Memories</h3>
+                  <p><span class="countdown-badge opened" style="font-size:10px;padding:2px 8px;"><i class="fa-solid fa-lock-open" style="font-size:8px;"></i> Unlocked</span> &middot; Nov 25</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-date-label">October 2025</div>
+
+            <div class="timeline-item" onclick="switchScreen('detail')">
+              <div class="timeline-dot blue"></div>
+              <div class="timeline-content">
+                <img src="https://picsum.photos/seed/tl4/600/240.jpg" alt="">
+                <div class="tc-info">
+                  <h3>Halloween Night 2024</h3>
+                  <p><span class="countdown-badge locked" style="font-size:10px;padding:2px 8px;"><i class="fa-solid fa-lock" style="font-size:8px;"></i> 340 days</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="height:20px;"></div>
+
+          <nav class="tab-bar">
+            <button class="tab-item" onclick="switchScreen('home')"><i class="fa-solid fa-house"></i><span>Home</span></button>
+            <button class="tab-item active" onclick="switchScreen('timeline')"><i class="fa-solid fa-clock-rotate-left"></i><span>Timeline</span></button>
+            <button class="tab-item create-btn" onclick="switchScreen('create')"><i class="fa-solid fa-plus"></i></button>
+            <button class="tab-item" onclick="switchScreen('notifications')"><i class="fa-solid fa-bell"></i><span>Alerts</span></button>
+            <button class="tab-item" onclick="switchScreen('profile')"><i class="fa-solid fa-user"></i><span>Profile</span></button>
+          </nav>
+        </div>
+
+        <!-- CAPSULE DETAIL SCREEN -->
+        <div class="app-screen" id="screen-detail">
+          <div class="status-bar" style="background:transparent;position:absolute;width:100%;">
+            <span class="time">9:41</span>
+            <span class="icons"><i class="fa-solid fa-signal"></i> <i class="fa-solid fa-wifi"></i> <i class="fa-solid fa-battery-full"></i></span>
+          </div>
+
+          <button class="detail-back" onclick="switchScreen('home')" style="position:absolute;z-index:10;padding-top:48px;">
+            <i class="fa-solid fa-arrow-left"></i> Back
+          </button>
+
+          <img class="detail-hero" src="https://picsum.photos/seed/capsule1/750/560.jpg" alt="Capsule Hero">
+
+          <div class="detail-content">
+            <span class="lock-status locked"><i class="fa-solid fa-lock"></i> Sealed &middot; Opens in 142 days</span>
+
+            <h1>Graduation Day Memories</h1>
+            <p class="author">Created by Sarah &middot; Sealed on Jan 15, 2025</p>
+
+            <div class="message-body">
+              Dear future Sarah, if you're reading this, congratulations on making it through! Remember how nervous you were on graduation day? Look at you now. I hope everything turned out even better than we imagined. Keep this photo close — it captures exactly how we felt in that moment.
+            </div>
+
+            <div class="detail-countdown">
+              <div class="cd-label">Time Until Unlock</div>
+              <div class="countdown-digits" id="countdownDigits">
+                <div class="cd-unit">
+                  <div class="num" id="cd-days">142</div>
+                  <div class="unit">Days</div>
+                </div>
+                <div class="cd-unit">
+                  <div class="num" id="cd-hours">08</div>
+                  <div class="unit">Hours</div>
+                </div>
+                <div class="cd-unit">
+                  <div class="num" id="cd-mins">34</div>
+                  <div class="unit">Mins</div>
+                </div>
+                <div class="cd-unit">
+                  <div class="num" id="cd-secs">12</div>
+                  <div class="unit">Secs</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-actions">
+              <button class="btn-react" onclick="reactToCapsule(this)"><i class="fa-regular fa-heart"></i> React</button>
+              <button class="btn-share" onclick="showToast('Share link copied to clipboard')"><i class="fa-solid fa-share-nodes"></i> Share</button>
+            </div>
+
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:16px;display:flex;align-items:center;gap:14px;">
+              <div style="width:40px;height:40px;border-radius:50%;overflow:hidden;flex-shrink:0;">
+                <img src="https://picsum.photos/seed/user1/80/80.jpg" alt="" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div style="flex:1;">
+                <div style="font-size:13px;font-weight:600;">Shared with Jake</div>
+                <div style="font-size:12px;color:var(--text-muted);">Waiting for unlock</div>
+              </div>
+              <i class="fa-solid fa-chevron-right" style="color:var(--text-muted);font-size:12px;"></i>
+            </div>
+          </div>
+
+          <div style="height:30px;"></div>
+        </div>
+
+        <!-- NOTIFICATIONS SCREEN -->
+        <div class="app-screen" id="screen-notifications">
+          <div class="status-bar">
+            <span class="time">9:41</span>
+            <span class="icons"><i class="fa-solid fa-signal"></i> <i class="fa-solid fa-wifi"></i> <i class="fa-solid fa-battery-full"></i></span>
+          </div>
+
+          <div class="timeline-header">
+            <h1>Notifications</h1>
+            <button style="background:var(--bg-card);border:1px solid var(--border);color:var(--text-secondary);width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:13px;" onclick="showToast('All notifications marked as read')">
+              <i class="fa-solid fa-check-double"></i>
+            </button>
+          </div>
+
+          <div class="unlocked-list" style="padding-bottom:10px;">
+            <div class="unlocked-item" style="border-color:rgba(254,228,105,0.15);">
+              <div class="icon-wrap gold"><i class="fa-solid fa-hourglass-half"></i></div>
+              <div class="details">
+                <h4>Capsule unlocking in 3 days</h4>
+                <p>New Year's Resolution &middot; Just now</p>
+              </div>
+              <div style="width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;"></div>
+            </div>
+            <div class="unlocked-item" style="border-color:rgba(0,0,205,0.15);">
+              <div class="icon-wrap blue"><i class="fa-solid fa-envelope"></i></div>
+              <div class="details">
+                <h4>Jake sent you a capsule</h4>
+                <p>"Open on your birthday" &middot; 2h ago</p>
+              </div>
+              <div style="width:8px;height:8px;border-radius:50%;background:var(--deep-blue);flex-shrink:0;"></div>
+            </div>
+            <div class="unlocked-item">
+              <div class="icon-wrap crimson"><i class="fa-solid fa-lock-open"></i></div>
+              <div class="details">
+                <h4>Capsule unlocked!</h4>
+                <p>Happy 25th Birthday! &middot; 2 days ago</p>
+              </div>
+            </div>
+            <div class="unlocked-item">
+              <div class="icon-wrap blue"><i class="fa-solid fa-heart"></i></div>
+              <div class="details">
+                <h4>Mom reacted to your capsule</h4>
+                <p>Graduation Day Memories &middot; 3 days ago</p>
+              </div>
+            </div>
+            <div class="unlocked-item">
+              <div class="icon-wrap gold"><i class="fa-solid fa-bell"></i></div>
+              <div class="details">
+                <h4>Reminder: Seal a New Year capsule</h4>
+                <p>Start the year with a memory &middot; 5 days ago</p>
+              </div>
+            </div>
+          </div>
+
+          <nav class="tab-bar">
+            <button class="tab-item" onclick="switchScreen('home')"><i class="fa-solid fa-house"></i><span>Home</span></button>
+            <button class="tab-item" onclick="switchScreen('timeline')"><i class="fa-solid fa-clock-rotate-left"></i><span>Timeline</span></button>
+            <button class="tab-item create-btn" onclick="switchScreen('create')"><i class="fa-solid fa-plus"></i></button>
+            <button class="tab-item active" onclick="switchScreen('notifications')"><i class="fa-solid fa-bell"></i><span>Alerts</span></button>
+            <button class="tab-item" onclick="switchScreen('profile')"><i class="fa-solid fa-user"></i><span>Profile</span></button>
+          </nav>
+        </div>
+
+        <!-- PROFILE SCREEN -->
+        <div class="app-screen" id="screen-profile">
+          <div class="status-bar">
+            <span class="time">9:41</span>
+            <span class="icons"><i class="fa-solid fa-signal"></i> <i class="fa-solid fa-wifi"></i> <i class="fa-solid fa-battery-full"></i></span>
+          </div>
+
+          <div class="profile-hero">
+            <div class="profile-avatar">S</div>
+            <h2>Sarah Mitchell</h2>
+            <div class="handle">@sarahmitchell</div>
+            <div class="profile-stats-row">
+              <div class="profile-stat">
+                <div class="val">17</div>
+                <div class="lbl">Capsules</div>
+              </div>
+              <div class="profile-stat">
+                <div class="val">8</div>
+                <div class="lbl">Unlocked</div>
+              </div>
+              <div class="profile-stat">
+                <div class="val">24</div>
+                <div class="lbl">Connections</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-menu">
+            <div class="menu-item" onclick="showToast('Edit profile coming soon')">
+              <i class="fa-solid fa-pen-to-square"></i> Edit Profile
+              <i class="fa-solid fa-chevron-right chevron"></i>
+            </div>
+            <div class="menu-item" onclick="showToast('Notification settings opened')">
+              <i class="fa-solid fa-bell"></i> Notification Settings
+              <i class="fa-solid fa-chevron-right chevron"></i>
+            </div>
+            <div class="menu-item" onclick="showToast('Privacy settings opened')">
+              <i class="fa-solid fa-shield-halved"></i> Privacy & Security
+              <i class="fa-solid fa-chevron-right chevron"></i>
+            </div>
+            <div class="menu-item" onclick="showToast('Invite link copied')">
+              <i class="fa-solid fa-user-plus"></i> Invite Friends
+              <i class="fa-solid fa-chevron-right chevron"></i>
+            </div>
+            <div class="menu-item" onclick="showToast('Help center opened')">
+              <i class="fa-solid fa-circle-question"></i> Help & Support
+              <i class="fa-solid fa-chevron-right chevron"></i>
+            </div>
+            <div class="menu-item danger" onclick="showToast('Logged out successfully')">
+              <i class="fa-solid fa-right-from-bracket"></i> Log Out
+              <i class="fa-solid fa-chevron-right chevron"></i>
+            </div>
+          </div>
+
+          <div style="text-align:center;padding:20px;font-size:11px;color:var(--text-muted);">TimeCapsule v2.0 &middot; Made with care</div>
+
+          <nav class="tab-bar">
+            <button class="tab-item" onclick="switchScreen('home')"><i class="fa-solid fa-house"></i><span>Home</span></button>
+            <button class="tab-item" onclick="switchScreen('timeline')"><i class="fa-solid fa-clock-rotate-left"></i><span>Timeline</span></button>
+            <button class="tab-item create-btn" onclick="switchScreen('create')"><i class="fa-solid fa-plus"></i></button>
+            <button class="tab-item" onclick="switchScreen('notifications')"><i class="fa-solid fa-bell"></i><span>Alerts</span></button>
+            <button class="tab-item active" onclick="switchScreen('profile')"><i class="fa-solid fa-user"></i><span>Profile</span></button>
+          </nav>
+        </div>
+
+        <!-- OPENING ANIMATION OVERLAY -->
+        <div class="opening-overlay" id="openingOverlay">
+          <div class="particles-container" id="particlesContainer"></div>
+          <div class="orb">
+            <i class="fa-solid fa-lock-open"></i>
+          </div>
+          <div class="opening-text">Capsule Unlocked</div>
+          <div class="opening-sub">A moment from the past has arrived</div>
+        </div>
+
+      </div>
+    </div>
+
+    <nav class="screen-nav">
+      <button class="active" data-screen="home" onclick="switchScreen('home')">Home</button>
+      <button data-screen="create" onclick="switchScreen('create')">Create</button>
+      <button data-screen="timeline" onclick="switchScreen('timeline')">Timeline</button>
+      <button data-screen="detail" onclick="switchScreen('detail')">Detail</button>
+      <button data-screen="notifications" onclick="switchScreen('notifications')">Notifications</button>
+      <button data-screen="profile" onclick="switchScreen('profile')">Profile</button>
+      <button onclick="triggerOpeningAnimation()" style="background:rgba(254,228,105,0.1);border-color:rgba(254,228,105,0.3);color:var(--gold);">Unlock Animation</button>
+    </nav>
+  </section>
+
+  <!-- DESIGN SYSTEM -->
+  <section class="design-system" id="designSystem">
+    <h2>Design System</h2>
+
+    <div class="ds-grid">
+      <!-- Colors -->
+      <div class="ds-card">
+        <h3>Color Palette</h3>
+        <div class="color-swatches">
+          <div class="swatch">
+            <div class="swatch-circle" style="background:#0000CD;"></div>
+            <div class="swatch-info"><div class="name">Deep Blue</div><div class="hex">#0000CD</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-circle" style="background:#8B2323;"></div>
+            <div class="swatch-info"><div class="name">Crimson</div><div class="hex">#8B2323</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-circle" style="background:#FEE469;"></div>
+            <div class="swatch-info"><div class="name">Gold</div><div class="hex">#FEE469</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-circle" style="background:#0A0A12;border:1px solid rgba(255,255,255,0.1);"></div>
+            <div class="swatch-info"><div class="name">Background</div><div class="hex">#0A0A12</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-circle" style="background:#1A1A2E;"></div>
+            <div class="swatch-info"><div class="name">Card Surface</div><div class="hex">#1A1A2E</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-circle" style="background:#F0EEF6;"></div>
+            <div class="swatch-info"><div class="name">Primary Text</div><div class="hex">#F0EEF6</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-circle" style="background:#9494B8;"></div>
+            <div class="swatch-info"><div class="name">Secondary Text</div><div class="hex">#9494B8</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-circle" style="background:#5E5E80;"></div>
+            <div class="swatch-info"><div class="name">Muted Text</div><div class="hex">#5E5E80</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Typography -->
+      <div class="ds-card">
+        <h3>Typography</h3>
+        <div class="type-samples">
+          <div class="type-sample">
+            <div class="label">Display / Playfair Display 800</div>
+            <div class="sample display">Time Capsule</div>
+          </div>
+          <div class="type-sample">
+            <div class="label">Heading / Playfair Display 700</div>
+            <div class="sample heading">Sealed Memories</div>
+          </div>
+          <div class="type-sample">
+            <div class="label">Body / DM Sans 400</div>
+            <div class="sample body">Every moment deserves to be remembered. Seal your memories and let time deliver them to the future.</div>
+          </div>
+          <div class="type-sample">
+            <div class="label">Caption / DM Sans 600</div>
+            <div class="sample caption">Sealed &middot; Opens in 142 days</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Components -->
+      <div class="ds-card">
+        <h3>Buttons</h3>
+        <div class="component-samples">
+          <div class="component-row">
+            <button class="ds-btn primary">Primary</button>
+            <button class="ds-btn secondary">Secondary</button>
+          </div>
+          <div class="component-row">
+            <button class="ds-btn accent">Accent</button>
+            <button class="ds-btn danger">Danger</button>
+          </div>
+          <div class="component-row">
+            <button class="ds-btn ghost"><i class="fa-solid fa-heart"></i></button>
+            <button class="ds-btn ghost"><i class="fa-solid fa-share"></i></button>
+            <button class="ds-btn ghost"><i class="fa-solid fa-bookmark"></i></button>
+            <button class="ds-btn ghost"><i class="fa-solid fa-ellipsis"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Icons -->
+      <div class="ds-card">
+        <h3>Icon Set</h3>
+        <div class="icon-grid">
+          <div class="icon-cell"><i class="fa-solid fa-lock"></i></div>
+          <div class="icon-cell"><i class="fa-solid fa-lock-open"></i></div>
+          <div class="icon-cell"><i class="fa-solid fa-hourglass-half"></i></div>
+          <div class="icon-cell"><i class="fa-solid fa-envelope"></i></div>
+          <div class="icon-cell"><i class="fa-solid fa-gift"></i></div>
+          <div class="icon-cell"><i class="fa-solid fa-heart"></i></div>
+          <div class="icon-cell"><i class="fa-solid fa-camera"></i></div>
+          <div class="icon-cell"><i class="fa-solid fa-image"></i></div>
+          <div class="icon-cell"><i class="fa-solid fa-clock-rotate-left"></i></div>
+          <div class="icon-cell"><i class="fa-solid fa-bell"></i></div>
+          <div class="icon-cell"><i class="fa-solid fa-user-plus"></i></div>
+          <div class="icon-cell"><i class="fa-solid fa-share-nodes"></i></div>
+          <div class="icon-cell"><i class="fa-solid fa-pen"></i></div>
+          <div class="icon-cell"><i class="fa-solid fa-calendar"></i></div>
+          <div class="icon-cell"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="icon-cell"><i class="fa-solid fa-gem"></i></div>
+          <div class="icon-cell"><i class="fa-solid fa-star"></i></div>
+          <div class="icon-cell"><i class="fa-solid fa-bookmark"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- User Flow -->
+    <div class="ds-card" style="max-width:900px;margin:0 auto;">
+      <h3 style="text-align:center;">Core User Flow</h3>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="step-icon blue"><i class="fa-solid fa-house"></i></div>
+          <div class="step-text">Home Dashboard</div>
+        </div>
+        <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="flow-step">
+          <div class="step-icon gold"><i class="fa-solid fa-plus"></i></div>
+          <div class="step-text">Create Capsule</div>
+        </div>
+        <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="flow-step">
+          <div class="step-icon blue"><i class="fa-solid fa-pen"></i></div>
+          <div class="step-text">Compose Content</div>
+        </div>
+        <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="flow-step">
+          <div class="step-icon crimson"><i class="fa-solid fa-lock"></i></div>
+          <div class="step-text">Seal & Set Date</div>
+        </div>
+        <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="flow-step">
+          <div class="step-icon blue"><i class="fa-solid fa-clock-rotate-left"></i></div>
+          <div class="step-text">Timeline View</div>
+        </div>
+        <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="flow-step">
+          <div class="step-icon gold"><i class="fa-solid fa-bell"></i></div>
+          <div class="step-text">Unlock Notification</div>
+        </div>
+        <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="flow-step">
+          <div class="step-icon gold"><i class="fa-solid fa-lock-open"></i></div>
+          <div class="step-text">Opening Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="js/test.js"></script>
+
+</body>
+</html>
